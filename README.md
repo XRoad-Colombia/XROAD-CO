@@ -1,5 +1,4 @@
 
-```markdown
 # X-Road Colombia – Instaladores y Versiones Adaptadas
 
 Este repositorio contiene las versiones adaptadas para Colombia del Servidor de Seguridad de **X-Road**, incluyendo sus respectivos paquetes de instalación (.zip) publicados en la sección de **Releases**.
@@ -73,7 +72,6 @@ Cada release incluye:
 
 Para detalles técnicos, cambios por versión, instrucciones específicas o notas de compatibilidad, consulta el `README.md` incluido dentro del tag de cada versión.
 
-```
 
 ---
 
