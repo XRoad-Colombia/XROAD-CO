@@ -28,6 +28,11 @@ El script valida automáticamente la conectividad a los siguientes servicios:
 
 ## 🚀 Instalación
 
+
+## 🔧 Proceso de Instalación
+
+El script ejecuta automáticamente los siguientes pasos:
+
 ### 1. Validación de Permisos
 - Verifica que se ejecute con privilegios de root
 
@@ -217,10 +222,12 @@ hostnamectl status
 
 ## 📝 Notas de Versión
 
-- **Versión**: X-ROAD 7.2.2
+- **Versión**: X-ROAD 7.3.2
 - **SO Soportado**: Ubuntu 22.04 LTS
 - **Addons incluidos**: Operational Monitoring
 
+
+
 ---
 
-**⚠️ Importante**: Este documento está diseñado específicamente para la implementación de X-ROAD en Colombia y requiere acceso a infraestructura específica de AND (Agencia Nacional Digital).
+**⚠️ Importante**: Este documento diseñado específicamente para la implementación de X-ROAD en Colombia y requiere acceso a infraestructura específica de AND (Agencia Nacional Digital)
