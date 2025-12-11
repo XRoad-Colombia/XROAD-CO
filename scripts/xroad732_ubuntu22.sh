@@ -162,13 +162,13 @@ sleep 2; echo -e "\n"
 ntpq -p
 sleep 2; echo -e "\n"
 
-echo "=============================="
-echo "=     Cambio de Hostname     ="
-echo "=============================="
-sleep 2; echo -e "\n"
-hostnamectl set-hostname xroadsec
-hostnamectl | grep -i hostname
-sleep 2; echo -e "\n"
+#echo "=============================="
+#echo "=     Cambio de Hostname     ="
+#echo "=============================="
+#sleep 2; echo -e "\n"
+#hostnamectl set-hostname xroadsec
+#hostnamectl | grep -i hostname
+#sleep 2; echo -e "\n"
 
 echo "===================================="
 echo "=     Instalando paquete unzip     ="

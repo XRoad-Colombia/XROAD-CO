@@ -91,21 +91,21 @@ else
 fi
 echo "--------------------------------------------"
 
-tln7=$(timeout 2 telnet xsr1ru3qkc.execute-api.us-east-1.amazonaws.com 443 | awk 'NR == 2 {print $1}')
-if [ "$tln7" = "Connected" ]; then
-  echo "✅ Conexión TSA Certicamara OK"
-else
-  echo "❌ Conexión TSA Certicamara ---->  Bloqueado"
-fi
-echo "--------------------------------------------"
-
-tln8=$(timeout 2 telnet ocsp4096.certicamara.co 80 | awk 'NR == 2 {print $1}')
-if [ "$tln8" = "Connected" ]; then
-  echo "✅ Conexión OCSP Certicamara OK"
-else
-  echo "❌ Conexión OCSP Certicamara ---->  Bloqueado"
-fi
-echo "--------------------------------------------"
+#tln7=$(timeout 2 telnet xsr1ru3qkc.execute-api.us-east-1.amazonaws.com 443 | awk 'NR == 2 {print $1}')
+#if [ "$tln7" = "Connected" ]; then
+#  echo "✅ Conexión TSA Certicamara OK"
+#else
+#  echo "❌ Conexión TSA Certicamara ---->  Bloqueado"
+#fi
+#echo "--------------------------------------------"
+#
+#tln8=$(timeout 2 telnet ocsp4096.certicamara.co 80 | awk 'NR == 2 {print $1}')
+#if [ "$tln8" = "Connected" ]; then
+#  echo "✅ Conexión OCSP Certicamara OK"
+#else
+#  echo "❌ Conexión OCSP Certicamara ---->  Bloqueado"
+#fi
+#echo "--------------------------------------------"
 
 #if git ls-remote "$REPO_URL" &>/dev/null; then
 # github=200
@@ -130,7 +130,7 @@ echo "--------------------------------------------"
 
 sleep 2; echo -e "\n"
 
-value=("$tln1" "$tln2" "$tln3" "$tln4" "$tln5" "$tln6" "$tln7" "$tln8")
+value=("$tln1" "$tln2" "$tln3" "$tln4" "$tln5" "$tln6")
 for i in "${value[@]}"; do
     if [ "$i" != "Connected" ]; then
         echo "No se cumplen los criterios de conectividad" ; echo -e "\n"
@@ -163,28 +163,29 @@ sleep 2; echo -e "\n"
 ntpq -p
 sleep 2; echo -e "\n"
 
-#!/bin/bash
 
-echo "=============================="
-echo "=     Cambio de Hostname     ="
-echo "=============================="
-sleep 1; echo -e "\n"
+#echo "=============================="
+#echo "=     Cambio de Hostname     ="
+#echo "=============================="
+#sleep 1; echo -e "\n"
+#
+## Pedir el nuevo hostname
+#read -p "Ingrese el nuevo hostname: " NEW_HOSTNAME
+#
+## Confirmar la entrada
+#echo -e "\nCambiando hostname a: $NEW_HOSTNAME ..."
+#sleep 1
+#
+## Aplicar el cambio
+#sudo hostnamectl set-hostname "$NEW_HOSTNAME"
+#
+## Mostrar resultado
+#echo -e "\nHostname actualizado:"
+#hostnamectl | grep -i hostname
+#
+#sleep 2; echo -e "\n"
 
-# Pedir el nuevo hostname
-read -p "Ingrese el nuevo hostname: " NEW_HOSTNAME
 
-# Confirmar la entrada
-echo -e "\nCambiando hostname a: $NEW_HOSTNAME ..."
-sleep 1
-
-# Aplicar el cambio
-sudo hostnamectl set-hostname "$NEW_HOSTNAME"
-
-# Mostrar resultado
-echo -e "\nHostname actualizado:"
-hostnamectl | grep -i hostname
-
-sleep 2; echo -e "\n"
 echo "===================================="
 echo "=     Instalando paquete unzip     ="
 echo "===================================="
