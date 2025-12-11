@@ -8,8 +8,8 @@ Este release está basado en la versión [6.26.3](https://github.com/nordic-inst
 
 A continuación se listan los enlaces de descarga de los paquetes de instalación por sistema operativo:
 
-* [Ubuntu 18.04](https://github.com/XRoad-Colombia/XROAD-CO/releases/download/6.26.3/ubuntu18.04.zip)
-* [Red Hat 7](https://github.com/XRoad-Colombia/XROAD-CO/releases/download/6.26.3/RHEL_7.zip)
-* [Red Hat 8](https://github.com/XRoad-Colombia/XROAD-CO/releases/download/6.26.3/RHEL_8.zip)
+* [Ubuntu 18.04](https://github.com/XRoad-Colombia/XROAD-CO/releases/download/6.26.3/ubuntu20_6.26.3.zip)
+* [Red Hat 7](https://github.com/XRoad-Colombia/XROAD-CO/releases/download/6.26.3/rhel7_6.23.zip)
+* [Red Hat 8](https://github.com/XRoad-Colombia/XROAD-CO/releases/download/6.26.3/rhel8_6.23.zip)
 
 ---
