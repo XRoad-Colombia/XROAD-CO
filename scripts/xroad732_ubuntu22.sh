@@ -98,13 +98,13 @@ else
 fi
 echo "--------------------------------------------"
 
-tln8=$(timeout 2 telnet ocsp4096.certicamara.co 80 | awk 'NR == 2 {print $1}')
-if [ "$tln8" = "Connected" ]; then
-  echo "✅ Conexión OCSP Certicamara OK"
-else
-  echo "❌ Conexión OCSP Certicamara ---->  Bloqueado"
-fi
-echo "--------------------------------------------"
+#tln8=$(timeout 2 telnet ocsp4096.certicamara.co 80 | awk 'NR == 2 {print $1}')
+#if [ "$tln8" = "Connected" ]; then
+#  echo "✅ Conexión OCSP Certicamara OK"
+#else
+#  echo "❌ Conexión OCSP Certicamara ---->  Bloqueado"
+#fi
+#echo "--------------------------------------------"
 
 #if git ls-remote "$REPO_URL" &>/dev/null; then
 # github=200
@@ -129,7 +129,7 @@ echo "--------------------------------------------"
 
 sleep 2; echo -e "\n"
 
-value=("$tln1" "$tln2" "$tln3" "$tln4" "$tln5" "$tln6" "$tln7" "$tln8")
+value=("$tln1" "$tln2" "$tln3" "$tln4" "$tln5" "$tln6" "$tln7")
 for i in "${value[@]}"; do
     if [ "$i" != "Connected" ]; then
         echo "No se cumplen los criterios de conectividad" ; echo -e "\n"
