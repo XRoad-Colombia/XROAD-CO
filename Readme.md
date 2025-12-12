@@ -1,6 +1,7 @@
 
 ---
 
+
 A continuación se listan los enlaces de descarga de la documentación oficial asociada a la versión Colombia:
 
 ### 📘 Manuales de Instalación
