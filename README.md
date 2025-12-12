@@ -27,13 +27,13 @@ Los instaladores están disponibles en la sección **Releases**.
 
 ---
 
-### **6.26.3 – Versión Colombia**
+### **6.26.3**
 Esta es la versión original no modificada, se utiliza como transición para la migración de versiones de X-Road de 6.25 a 7.2.2 o 7.3.2.
 
 
 ---
 
-### **7.0.4 – Versión Colombia**
+### **7.0.4**
 Versión basada en la línea 7.x del NIIS.  
 Incluye mejoras de seguridad, cambios en dependencias y actualización de librerías internas.
 Esta es la versión original no modificada, se utiliza como transición para la migración de versiones de X-Road de 6.25 a 7.2.2 o 7.3.2.
