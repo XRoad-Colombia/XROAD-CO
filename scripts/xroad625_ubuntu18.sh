@@ -1,10 +1,8 @@
 #!/bin/bash
 
-
-#REPO_URL="https://github.com/UT-CDC/XRoad_7.3.2_Ubuntu_22/releases/download/mirror-main-d2e77f2/ubuntu18.04.zip"
 REPO_URL="https://github.com/XRoad-Colombia/XROAD-CO/releases/download/6.25/ubuntu18.04.zip"
+CLONE_DIR="x-road_colombia_6.25_Ubuntu22"
 
-DEST_FILE="/home/ubuntu/ubuntu18.04.zip"
 
 echo -e "\n"
 echo "====================================================="
@@ -98,7 +96,7 @@ echo "--------------------------------------------"
 #  echo "❌ Conexión TSA Certicamara ---->  Bloqueado"
 #fi
 #echo "--------------------------------------------"
-#
+
 #tln8=$(timeout 2 telnet ocsp4096.certicamara.co 80 | awk 'NR == 2 {print $1}')
 #if [ "$tln8" = "Connected" ]; then
 #  echo "✅ Conexión OCSP Certicamara OK"
@@ -130,7 +128,7 @@ echo "--------------------------------------------"
 
 sleep 2; echo -e "\n"
 
-value=("$tln1" "$tln2" "$tln3" "$tln4" "$tln5" "$tln6")
+value=("$tln1" "$tln2" "$tln3" "$tln4" "$tln5" "$tln6" )
 for i in "${value[@]}"; do
     if [ "$i" != "Connected" ]; then
         echo "No se cumplen los criterios de conectividad" ; echo -e "\n"
@@ -163,28 +161,13 @@ sleep 2; echo -e "\n"
 ntpq -p
 sleep 2; echo -e "\n"
 
-
-#echo "=============================="
-#echo "=     Cambio de Hostname     ="
-#echo "=============================="
-#sleep 1; echo -e "\n"
-#
-## Pedir el nuevo hostname
-#read -p "Ingrese el nuevo hostname: " NEW_HOSTNAME
-#
-## Confirmar la entrada
-#echo -e "\nCambiando hostname a: $NEW_HOSTNAME ..."
-#sleep 1
-#
-## Aplicar el cambio
-#sudo hostnamectl set-hostname "$NEW_HOSTNAME"
-#
-## Mostrar resultado
-#echo -e "\nHostname actualizado:"
-#hostnamectl | grep -i hostname
-#
-#sleep 2; echo -e "\n"
-
+echo "=============================="
+echo "=     Cambio de Hostname     ="
+echo "=============================="
+sleep 2; echo -e "\n"
+hostnamectl set-hostname xroadsec
+hostnamectl | grep -i hostname
+sleep 2; echo -e "\n"
 
 echo "===================================="
 echo "=     Instalando paquete unzip     ="
@@ -196,20 +179,20 @@ echo "======================================="
 echo "=     Descargando paquetes X-ROAD     ="
 echo "======================================="
 sleep 2; echo -e "\n"
-cd /home/ubuntu
+cd /opt/
 
 echo "=== Descarga repositorio wget==="
-wget -P /home/ubuntu/ "$REPO_URL" 
+wget -P /opt/ "$REPO_URL" 
 echo "✅ Descarga completada...."
 sleep 2; echo -e "\n"
 
 
 echo "📂 Descomprimiendo ubuntu18.04.zip..."
-unzip /home/ubuntu/ubuntu18.04.zip -d /home/ubuntu/ 
+unzip /opt/ubuntu18.04.zip -d /opt/ 
 
 # Comprobamos que el directorio existe después de descomprimir
-if [ ! -d "/home/ubuntu/ubuntu18.04" ]; then
-  echo "❌ Error: El directorio /home/ubuntu/ubuntu18.04 no existe."
+if [ ! -d "/opt/ubuntu18.04" ]; then
+  echo "❌ Error: El directorio /opt/ubuntu18.04 no existe."
   exit 1
 fi
 
@@ -217,15 +200,15 @@ fi
 sleep 2; echo -e "\n"
 
 echo "🔒 Ajustando permisos..."
-chmod a+rx /home /home/ubuntu /home/ubuntu/ubuntu18.04
-chmod -R a+rX /home/ubuntu/ubuntu18.04
+chmod a+rx /opt /opt/ubuntu18.04
+chmod -R a+rX /opt/ubuntu/ubuntu18.04
 
 
 echo "=========================================="
 echo "=     Configurando repositorio local     ="
 echo "=========================================="
 sleep 2; echo -e "\n"
-echo "deb [trusted=yes] file:///home/ubuntu/ubuntu18.04 ./" | tee -a /etc/apt/sources.list
+echo "deb [trusted=yes] file:///opt/ubuntu18.04 ./" | tee -a /etc/apt/sources.list
 echo "#### Se ha modificado sources.list ####"
 tail -n 1 /etc/apt/sources.list
 sleep 2; echo -e "\n"
@@ -236,7 +219,7 @@ echo "==============================="
 echo "=     Instalando dpkg-dev     ="
 echo "==============================="
 sleep 2; echo -e "\n"
-cd /home/ubuntu/ubuntu18.04
+cd /opt/ubuntu18.04
 apt -y install dpkg-dev
 dpkg-scanpackages . >Packages
 sleep 2; echo -e "\n"
