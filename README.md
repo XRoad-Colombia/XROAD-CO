@@ -49,6 +49,11 @@ Modificada y adaptada a Colombia
 ---
 
 ### **7.3.2 – Versión Colombia**
+Incluye los ajustes más recientes realizados por NIIS y las adaptaciones nacionales para el ecosistema X-Road Colombia.
+
+---
+
+### **7.4.2 – Versión Colombia**
 Última versión incorporada al repositorio.  
 Incluye los ajustes más recientes realizados por NIIS y las adaptaciones nacionales para el ecosistema X-Road Colombia.
 
